@@ -1,0 +1,6 @@
+{
+  "maxSeasonEpCount": 13,
+  "preferSites": ["bilibili", "iqiyi"],
+  "maxOldBangumiMonth": 3,
+  "epLength": 24
+}
