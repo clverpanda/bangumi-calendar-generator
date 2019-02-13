@@ -50,7 +50,7 @@ module.exports.getNowOnAirBangumiData = (timeNow, likeList) =>
       item.type === 'tv' &&
       item.lang === 'ja' &&
       beginTime.isAfter(minTime, 'second')
-    );;
+    );
     if (!isNowOn || !likeList) return isNowOn;
     return isNowOn && likeList.includes(item.title);
   })
