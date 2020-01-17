@@ -1,9 +1,10 @@
 const moment = require('moment');
+const DEFAULT = require("../default.json");
 
-const MAX_SEASON_EP_COUNT = 13; // 默认每季集数.
-const MAX_OLD_BANGUMI_MONTH = 3; // 未结束老番最大月数
-const EP_LENGTH = 24; // 默认每集动画时长（分钟）
-const PREFER_SITES = ['bilibili', 'iqiyi']; // 默认偏好站点
+const MAX_SEASON_EP_COUNT = DEFAULT.MAX_SEASON_EP_COUNT; // 默认每季集数.
+const MAX_OLD_BANGUMI_MONTH = DEFAULT.maxOldBangumiMonth; // 未结束老番最大月数
+const EP_LENGTH = DEFAULT.epLength; // 默认每集动画时长（分钟）
+const PREFER_SITES = DEFAULT.preferSites; // 默认偏好站点
 
 const NO_ON_AIR_MSG = '无';
 const SITE_TYPE_ONAIR = 'onair';
