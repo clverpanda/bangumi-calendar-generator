@@ -33,7 +33,7 @@ const argv = require('yargs').array('like').argv;
     ]);
     likeList = selectedBangumi.result;
     console.log('=================已生成选择的番剧的日历，下次可以用以下命令直接生成===================');
-    console.log(`yarn generate --like ${likeList.reduce((prev, next) => `"${prev}" "${next}"`)}`);
+    console.log(`yarn generate --like${likeList.reduce((prev, next) => `${prev} "${next}"`, '')}`);
   }
   if (argv.like) {
     likeList = argv.like;
