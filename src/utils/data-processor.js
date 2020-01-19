@@ -1,7 +1,7 @@
 const moment = require('moment');
 const DEFAULT = require("../default.json");
 
-const MAX_SEASON_EP_COUNT = DEFAULT.MAX_SEASON_EP_COUNT; // 默认每季集数.
+const MAX_SEASON_EP_COUNT = DEFAULT.maxSeasonEpCount; // 默认每季集数.
 const MAX_OLD_BANGUMI_MONTH = DEFAULT.maxOldBangumiMonth; // 未结束老番最大月数
 const EP_LENGTH = DEFAULT.epLength; // 默认每集动画时长（分钟）
 const PREFER_SITES = DEFAULT.preferSites; // 默认偏好站点
