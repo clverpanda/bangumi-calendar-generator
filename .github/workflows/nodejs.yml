@@ -23,7 +23,7 @@ jobs:
       with:
         repository: 'clverpanda/bangumi-ics'
         fetch-depth: 0
-        token: ${{ secrets.ACCESS_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         path: './result'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
