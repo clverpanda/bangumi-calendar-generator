@@ -3,9 +3,17 @@ const { getNowOnAirBangumiData } = require('./utils/data-getter');
 const { getEventsFromData, getBangumiName } = require('./utils/data-processor');
 const bangumiData = require('bangumi-data');
 const ics = require('ics');
-const { writeFileSync } = require('fs');
+const fs = require('fs');
+const path = require('path');
 const inquirer = require('inquirer');
 const argv = require('yargs').array('like').argv;
+const DEFAULT = require("./default.json");
+
+const { writeFileSync } = fs;
+
+const resultFileName = 'bangumi.ics';
+const resultPath = path.join(__dirname, '../result');
+const defaultLikeList = DEFAULT.likeList;
 
 (async () => {
   const timeNow = moment();
@@ -34,9 +42,10 @@ const argv = require('yargs').array('like').argv;
     likeList = selectedBangumi.result;
     console.log('=================已生成选择的番剧的日历，下次可以用以下命令直接生成===================');
     console.log(`yarn generate --like${likeList.reduce((prev, next) => `${prev} "${next}"`, '')}`);
+    console.log(JSON.stringify(likeList));
   }
   if (argv.like) {
-    likeList = argv.like;
+    likeList = typeof argv.like.length === 'number' && argv.like.length > 0 ? argv.like : defaultLikeList;
   }
   const data = getNowOnAirBangumiData(timeNow, likeList);
   const sites = bangumiData.siteMeta;
@@ -45,7 +54,10 @@ const argv = require('yargs').array('like').argv;
     if (error) {
       console.log(error);
     }
-    writeFileSync(`${__dirname}/bangumi.ics`, value);
+    if (!fs.existsSync(resultPath)) {
+      fs.mkdirSync(resultPath);
+    }
+    writeFileSync(path.join(resultPath, resultFileName), value);
     if (!likeList) {
       console.log(
         '=============由于没有输入喜欢的番剧，生成了当期正在播放的所有番剧的日历==============='

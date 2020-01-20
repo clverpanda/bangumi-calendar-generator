@@ -3,5 +3,8 @@
   "preferSites": ["bilibili", "iqiyi"],
   "maxOldBangumiMonth": 3,
   "epLength": 24,
-  "dataUrl": "https://cdn.jsdelivr.net/npm/bangumi-data@0.3/dist/data.json"
+  "dataUrl": "https://cdn.jsdelivr.net/npm/bangumi-data@0.3/dist/data.json",
+  "likeList": ["僕のヒーローアカデミア(第4期)","Fate/Grand Order -絶対魔獣戦線バビロニア-","恋する小惑星","ダーウィンズゲーム",
+    "マギアレコード 魔法少女まどか☆マギカ外伝","へやキャン△","pet","痛いのは嫌なので防御力に極振りしたいと思います。","ネコぱら",
+    "とある科学の超電磁砲T","異種族レビュアーズ","ランウェイで笑って","虚構推理"]
 }
