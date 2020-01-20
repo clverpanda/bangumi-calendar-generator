@@ -23,7 +23,7 @@ jobs:
       with:
         repository: 'clverpanda/bangumi-ics'
         fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ACCESS_TOKEN }}
         path: './result'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -45,6 +45,6 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.ACCESS_TOKEN }}
         repository: 'clverpanda/bangumi-ics'
         directory: './result'
