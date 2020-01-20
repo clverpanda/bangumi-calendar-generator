@@ -17,4 +17,4 @@ yarn generate --show
 yarn generate # 生成所有新番的日历
 yarn generate --like [新番1] [新番2] [新番3] # 生成你所需要的新番的日历
 ```
-a
+
