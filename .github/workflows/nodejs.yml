@@ -18,13 +18,32 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: checkout result
+      uses: actions/checkout@v2
+      with:
+        repository: 'clverpanda/bangumi-ics'
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: './result'
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: npm install&generate
       run: |
         npm install
-        npm run generate
+        npm run generate:like
       env:
         CI: true
+    - name: Commit files
+      run: |
+        cd result/
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Update Bangumi" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        repository: 'clverpanda/bangumi-ics'
+        directory: './result'
