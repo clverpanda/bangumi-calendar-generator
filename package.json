@@ -4,7 +4,8 @@
   "description": "get your own bangumi calendar",
   "main": "index.js",
   "scripts": {
-    "generate": "node ./src/generator.js"
+    "generate": "node ./src/generator.js",
+    "generate:like": node ./src/generator.js --like"
   },
   "author": "clverpanda",
   "license": "MIT",
