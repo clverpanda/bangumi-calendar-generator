@@ -1,6 +1,9 @@
 name: Node CI
 
 on:
+  push:
+   branches:
+     - master
   schedule:
   - cron: "0 10 * * 1"
 
