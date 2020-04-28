@@ -1,5 +1,9 @@
 # 新番日历生成器
 
+## 生成的日历示例地址
+
+https://raw.githubusercontent.com/clverpanda/bangumi-ics/master/bangumi.ics
+
 ## 使用方法(CLI)
 
 ### 安装依赖
