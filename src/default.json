@@ -1,11 +1,23 @@
 {
   "maxSeasonEpCount": 13,
-  "preferSites": ["bilibili", "iqiyi"],
+  "preferSites": [
+    "bilibili",
+    "iqiyi"
+  ],
   "maxOldBangumiMonth": 3,
   "epLength": 24,
   "dataUrl": "https://cdn.jsdelivr.net/npm/bangumi-data@0.3/dist/data.json",
-  "likeList": ["とある科学の超電磁砲T", "異世界かるてっと２", "八男って、それはないでしょう！", "やはり俺の青春ラブコメはまちがっている。完",
-    "かぐや様は告らせたい？～天才たちの恋愛頭脳戦～", "邪神ちゃんドロップキック'", "プリンセスコネクト！Re:Dive",
-    "ソードアート・オンライン アリシゼーション War of Underworld -THE LAST SEASON-","食戟のソーマ 豪ノ皿", "フルーツバスケット 2nd season",
-    "社長、バトルの時間です！", "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…", "天晴爛漫！", "富豪刑事 Balance:UNLIMITED"]
+  "likeList": [
+    "とある科学の超電磁砲T",
+    "異世界かるてっと２",
+    "やはり俺の青春ラブコメはまちがっている。完",
+    "ソードアート・オンライン アリシゼーション War of Underworld -THE LAST SEASON-",
+    "彼女、お借りします",
+    "魔王学院の不適合者～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～",
+    "Re:ゼロから始める異世界生活 2nd season",
+    "ピーター・グリルと賢者の時間",
+    "THE GOD OF HIGH SCHOOL ゴッド・オブ・ハイスクール",
+    "うまよん",
+    "炎炎ノ消防隊 弐ノ章"
+  ]
 }
