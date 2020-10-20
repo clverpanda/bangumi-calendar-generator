@@ -68,10 +68,10 @@ axios@^0.20.0:
   dependencies:
     follow-redirects "^1.10.0"
 
-bangumi-data@^0.3.12:
-  version "0.3.44"
-  resolved "https://registry.yarnpkg.com/bangumi-data/-/bangumi-data-0.3.44.tgz#d576f776694977a0a92ca43aa0741cb100f75e30"
-  integrity sha512-kxxwUw6y+yvz0r19mkeviZh0G5xiwjCJ0q9H9gezMrfFBZJIqcAMnhrVNy/yZ4839n0rihbHRBSWrBUYBgKeIg==
+bangumi-data@^0.3.45:
+  version "0.3.45"
+  resolved "https://registry.yarnpkg.com/bangumi-data/-/bangumi-data-0.3.45.tgz#595366cda587c9191600da28e25fd9559d8ef525"
+  integrity sha512-jUPR3r37V/A+kw22GwyjEvyx8tnAzXZJ+ILdhbNpxUl2nXpiaVEzj5gFA0YugB7mP67DZUjxcMCMH7frD41KYA==
 
 chalk@^4.1.0:
   version "4.1.0"
