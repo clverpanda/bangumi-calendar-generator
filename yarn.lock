@@ -119,11 +119,6 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-dayjs@^1.8.33:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.3.tgz#b7f94b22ad2a136a4ca02a01ab68ae893fe1a268"
-  integrity sha512-V+1SyIvkS+HmNbN1G7A9+ERbFTV9KTXu6Oor98v2xHmzzpp52OIJhQuJSTywWuBY5pyAEmlwbCi1Me87n/SLOw==
-
 emoji-regex@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
@@ -177,13 +172,12 @@ iconv-lite@^0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-ics@^2.18.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/ics/-/ics-2.25.0.tgz#fc0e0f09927576bec7f938b10f243df665654c3b"
-  integrity sha512-J76FmJ2NgGN7JP6abx6BmOL7np4JFdJ+eZ2JHBK/AA8MqAWVxmETmeY8EncM2ci3jNbsbMbpN2mXSKd6/Ps5wQ==
+ics@^2.26.0:
+  version "2.26.0"
+  resolved "https://registry.yarnpkg.com/ics/-/ics-2.26.0.tgz#67c17d6bcac02b1547cc97bfbe3b99f057900b39"
+  integrity sha512-j9ffwzVlO4h7iXP0V/3ma55fT+mnk9fS2NsIo9tu0SAnJ9B92qTeJ7r23nscBkNEfzy6yCXBm+3cI6CeFFG24A==
   dependencies:
     "@hapi/joi" "^17.1.1"
-    dayjs "^1.8.33"
     uuid "^3.3.3"
 
 inquirer@^7.0.3:
