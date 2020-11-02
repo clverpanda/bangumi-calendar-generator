@@ -172,10 +172,10 @@ iconv-lite@^0.4.24:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-ics@^2.26.0:
-  version "2.26.0"
-  resolved "https://registry.yarnpkg.com/ics/-/ics-2.26.0.tgz#67c17d6bcac02b1547cc97bfbe3b99f057900b39"
-  integrity sha512-j9ffwzVlO4h7iXP0V/3ma55fT+mnk9fS2NsIo9tu0SAnJ9B92qTeJ7r23nscBkNEfzy6yCXBm+3cI6CeFFG24A==
+ics@^2.26.1:
+  version "2.26.1"
+  resolved "https://registry.yarnpkg.com/ics/-/ics-2.26.1.tgz#3d1228df16263f8e51e975ca40a6a51d19bdebc5"
+  integrity sha512-C2tspVID1sINpeVea0HMuZeMCHdRBiUHNAWG4P7EuSIrDZ6M/cOe48MTF2a36DCOqEld7LDKkLNDFVnGbGPepA==
   dependencies:
     "@hapi/joi" "^17.1.1"
     uuid "^3.3.3"
