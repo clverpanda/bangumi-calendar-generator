@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
-    "bangumi-data": "^0.3.46",
+    "bangumi-data": "^0.3.47",
     "ics": "^2.26.1",
     "inquirer": "^7.0.3",
     "moment": "^2.24.0",
