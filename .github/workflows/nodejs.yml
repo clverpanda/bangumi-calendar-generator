@@ -21,7 +21,7 @@ jobs:
     - name: checkout result
       uses: actions/checkout@v2
       with:
-        repository: 'clverpanda/bangumi-ics'
+        repository: 'clverpanda/clverpanda.github.io'
         fetch-depth: 0
         token: ${{ secrets.ACCESS_TOKEN }}
         path: './result'
@@ -46,5 +46,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
-        repository: 'clverpanda/bangumi-ics'
+        repository: 'clverpanda/clverpanda.github.io'
         directory: './result'
