@@ -82,7 +82,7 @@ const getBangumiOnAirTimes = (bangumi, timeNow) => {
     // 新番默认有MAX_SEASON_EP_COUNT集
     for (let i = 0; i < MAX_SEASON_EP_COUNT; i++) {
       if (beginTime.isAfter(now)) {
-        resultList.push(beginTime.format('YYYY-M-D-H-m').split('-'));
+        resultList.push(beginTime.format('YYYY-M-D-H-m').split('-').map(Number));
       }
       beginTime.add(1, 'w');
     }
@@ -91,7 +91,7 @@ const getBangumiOnAirTimes = (bangumi, timeNow) => {
     const initialTime = getInitialDateOfOldBangumi(beginTime, now);
     const endTime = now.add(MAX_OLD_BANGUMI_MONTH, 'M');
     while (initialTime.isBefore(endTime)) {
-      resultList.push(initialTime.format('YYYY-M-D-H-m').split('-'));
+      resultList.push(initialTime.format('YYYY-M-D-H-m').split('-').map(Number));
       initialTime.add(1, 'w');
     }
   }
