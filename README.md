@@ -9,6 +9,7 @@ https://raw.githubusercontent.com/clverpanda/bangumi-ics/master/bangumi.ics
 ### 安装依赖
 ```shell
 yarn install
+yarn upgrade bangumi-data
 ```
 
 ### 获取正在播放的新番列表
