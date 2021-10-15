@@ -3,19 +3,5 @@
   "preferSites": ["bilibili", "iqiyi"],
   "maxOldBangumiMonth": 3,
   "epLength": 24,
-  "dataUrl": "https://cdn.jsdelivr.net/npm/bangumi-data@0.3/dist/data.json",
-  "likeList": [
-    "幼なじみが絶対に負けないラブコメ",
-    "ゾンビランドサガ リベンジ",
-    "異世界魔王と召喚少女の奴隷魔術Ω",
-    "ひげを剃る。そして女子高生を拾う。",
-    "転生したらスライムだった件 転スラ日記",
-    "スライム倒して300年、知らないうちにレベルMAXになってました",
-    "スーパーカブ",
-    "究極進化したフルダイブRPGが現実よりもクソゲーだったら",
-    "戦闘員、派遣します！",
-    "シャドーハウス",
-    "86-エイティシックス-",
-    "NOMAD メガロボクス2"
-  ]
+  "dataUrl": "https://cdn.jsdelivr.net/npm/bangumi-data@0.3/dist/data.json"
 }

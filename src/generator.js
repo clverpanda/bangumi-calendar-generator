@@ -7,13 +7,15 @@ const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
 const argv = require('yargs').array('like').argv;
-const DEFAULT = require("./default.json");
+const DEFAULT = require('./default.json');
+const LIKE = require('./like.json');
 
 const { writeFileSync } = fs;
 
 const resultFileName = 'bangumi.ics';
 const resultPath = path.join(__dirname, '../result');
-const defaultLikeList = DEFAULT.likeList;
+const likeFilePath = path.join(__dirname, 'like.json');
+const defaultLikeList = LIKE.likeList;
 
 (async () => {
   const timeNow = moment();
@@ -33,19 +35,29 @@ const defaultLikeList = DEFAULT.likeList;
         type: 'checkbox',
         name: 'result',
         message: '请选择你喜欢的番剧：',
-        choices: data.map(item => ({
+        choices: data.map((item) => ({
           name: getBangumiName(item),
           value: item.title,
         })),
       },
     ]);
     likeList = selectedBangumi.result;
-    console.log('=================已生成选择的番剧的日历，下次可以用以下命令直接生成===================');
-    console.log(`yarn generate --like${likeList.reduce((prev, next) => `${prev} "${next}"`, '')}`);
-    console.log(JSON.stringify(likeList));
+    console.log(
+      '=================已生成选择的番剧的日历，下次可以用以下命令直接生成==================='
+    );
+    console.log(
+      `yarn generate --like${likeList.reduce(
+        (prev, next) => `${prev} "${next}"`,
+        ''
+      )}`
+    );
+    writeFileSync(likeFilePath, JSON.stringify({ likeList }, null, 2));
   }
   if (argv.like) {
-    likeList = typeof argv.like.length === 'number' && argv.like.length > 0 ? argv.like : defaultLikeList;
+    likeList =
+      typeof argv.like.length === 'number' && argv.like.length > 0
+        ? argv.like
+        : defaultLikeList;
   }
   const data = getNowOnAirBangumiData(timeNow, likeList);
   const sites = bangumiData.siteMeta;
