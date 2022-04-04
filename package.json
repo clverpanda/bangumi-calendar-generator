@@ -15,7 +15,7 @@
     "bangumi-data": "^0.3.84",
     "ics": "^2.35.0",
     "inquirer": "^8.2.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "yargs": "^17.4.0"
   },
   "devDependencies": {
