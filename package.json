@@ -11,7 +11,7 @@
   "author": "clverpanda",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "bangumi-data": "^0.3.89",
     "ics": "^2.35.0",
     "inquirer": "^8.2.2",
