@@ -8,6 +8,7 @@ const PREFER_SITES = DEFAULT.preferSites; // 默认偏好站点
 
 const NO_ON_AIR_MSG = '无';
 const SITE_TYPE_ONAIR = 'onair';
+const SITE_TYPE_INFO = 'info';
 
 
 const getInitialDateOfOldBangumi = (beginTime, timeNow) => {
@@ -41,7 +42,7 @@ const getBangumiSiteList = (bangumi, siteMeta) => {
         siteInfo.title &&
         siteInfo.urlTemplate &&
         siteInfo.type &&
-        siteInfo.type === SITE_TYPE_ONAIR
+        siteInfo.type === SITE_TYPE_ONAIR || SITE_TYPE_INFO // 避免没有 ONAIR 站点时 resultList 为空
       ) {
         resultList.push({
           site: site.site,
