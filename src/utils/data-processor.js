@@ -5,9 +5,11 @@ const MAX_SEASON_EP_COUNT = DEFAULT.maxSeasonEpCount; // 默认每季集数.
 const MAX_OLD_BANGUMI_MONTH = DEFAULT.maxOldBangumiMonth; // 未结束老番最大月数
 const EP_LENGTH = DEFAULT.epLength; // 默认每集动画时长（分钟）
 const PREFER_SITES = DEFAULT.preferSites; // 默认偏好站点
+const BANGUMI_URL = DEFAULT.bangumiUrl; // 默认番剧 url
 
 const NO_ON_AIR_MSG = '无';
 const SITE_TYPE_ONAIR = 'onair';
+const SITE_TYPE_INFO = 'info';
 
 
 const getInitialDateOfOldBangumi = (beginTime, timeNow) => {
@@ -41,7 +43,7 @@ const getBangumiSiteList = (bangumi, siteMeta) => {
         siteInfo.title &&
         siteInfo.urlTemplate &&
         siteInfo.type &&
-        siteInfo.type === SITE_TYPE_ONAIR
+        siteInfo.type === SITE_TYPE_ONAIR || SITE_TYPE_INFO // 避免没有 ONAIR 站点时 resultList 为空
       ) {
         resultList.push({
           site: site.site,
@@ -64,7 +66,7 @@ const getBangumiDescription = siteList => {
 };
 
 const getBangumiUrl = siteList => {
-  if (siteList.length <= 0) return null;
+  if (siteList.length <= 0) return BANGUMI_URL; // 避免返回 null 导致 ics 创建失败
   PREFER_SITES.forEach(prefer => {
     const foundSite = siteList.find(site => site.site === prefer);
     if (foundSite) {
