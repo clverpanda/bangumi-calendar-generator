@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^1.5.1",
     "bangumi-data": "^0.3.125",
-    "ics": "^2.35.0",
+    "ics": "^3.7.1",
     "inquirer": "^8.2.2",
     "moment": "^2.29.3",
     "yargs": "^17.7.1"
