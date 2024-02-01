@@ -2,7 +2,7 @@
 
 ## 生成的日历示例地址
 
-https://raw.githubusercontent.com/clverpanda/bangumi-ics/master/bangumi.ics
+[https://clverpanda.github.io/bangumi.ics](https://clverpanda.github.io/bangumi.ics)
 
 ## 使用方法(CLI)
 
