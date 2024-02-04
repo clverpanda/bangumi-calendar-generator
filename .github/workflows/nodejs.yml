@@ -32,6 +32,7 @@ jobs:
         run: |
           npm install
           npm run generate:like
+          npm run generate:list
         env:
           CI: true
       - name: Commit files

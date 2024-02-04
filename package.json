@@ -6,7 +6,8 @@
   "scripts": {
     "generate": "node ./src/generator.js",
     "generate:show": "node ./src/generator.js --show",
-    "generate:like": "node ./src/generator.js --like"
+    "generate:like": "node ./src/generator.js --like",
+    "generate:list": "node ./src/generator.js --list"
   },
   "author": "clverpanda",
   "license": "MIT",
