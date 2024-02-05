@@ -23,10 +23,11 @@ const defaultLikeList = LIKE.likeList;
   let likeList = null;
   if (argv.list) {
     const data = getNowOnAirBangumiData(timeNow);
-    const bangumiList = data.map((item) => ({
-      name: getBangumiName(item),
-      value: item.title,
-    }));
+    const bangumiList = data
+      .map((item) => ({
+        [getBangumiName(item)]: item.title,
+      }))
+      .reduce((p, n) => ({ ...p, ...n }));
     if (!fs.existsSync(resultPath)) {
       fs.mkdirSync(resultPath);
     }
