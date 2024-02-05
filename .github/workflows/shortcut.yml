@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: npm install&generate
         run: |
-          echo "The event payload is ${{ github.event.client_payload }}"
+          echo ${{ github.event.client_payload.like_list }}
           npm install
           npm run generate:like
         env:
