@@ -70,11 +70,11 @@ const defaultLikeList = LIKE.likeList;
     );
     writeFileSync(likeFilePath, JSON.stringify({ likeList }, null, 2));
   }
-  if (argv.like) {
-    likeList =
-      typeof argv.like.length === 'number' && argv.like.length > 0
-        ? argv.like
-        : defaultLikeList;
+  if (argv.like && argv.like.length > 0) {
+    likeList = argv.like;
+    writeFileSync(likeFilePath, JSON.stringify({ likeList }, null, 2));
+  } else {
+    likeList = defaultLikeList;
   }
   const data = getNowOnAirBangumiData(timeNow, likeList);
   const sites = bangumiData.siteMeta;
