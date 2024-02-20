@@ -27,8 +27,8 @@ jobs:
       - name: Commit files
         run: |
           git add src/like.json
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "543833065@qq.com"
+          git config --local user.name "clverpanda"
           git commit -m "Update Bangumi" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
