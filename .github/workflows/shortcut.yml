@@ -26,7 +26,7 @@ jobs:
           CI: true
       - name: Commit files
         run: |
-          git add like.json
+          git add src/like.json
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Update Bangumi" -a
