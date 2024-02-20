@@ -7,7 +7,8 @@
     "generate": "node ./src/generator.js",
     "generate:show": "node ./src/generator.js --show",
     "generate:like": "node ./src/generator.js --like",
-    "generate:list": "node ./src/generator.js --list"
+    "generate:list": "node ./src/generator.js --list",
+    "like": "node ./src/write-like.js"
   },
   "author": "clverpanda",
   "license": "MIT",

@@ -14,28 +14,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: checkout result
-        uses: actions/checkout@v2
-        with:
-          repository: 'clverpanda/clverpanda.github.io'
-          fetch-depth: 0
-          token: ${{ secrets.ACCESS_TOKEN }}
-          path: './result'
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install&generate
+      - name: update like.json
         run: |
-          echo '${{ join(github.event.client_payload.like_list, ',') }}'
-          npm install
-          npm run generate:like '${{ join(github.event.client_payload.like_list, ' ') }}'
+          echo '${{ toJSON(github.event.client_payload.like_list) }}'
+          npm run like '${{ toJSON(github.event.client_payload.like_list) }}'
         env:
           CI: true
       - name: Commit files
         run: |
-          cd result/
-          git add .
+          git add like.json
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Update Bangumi" -a
@@ -43,5 +34,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
-          repository: 'clverpanda/clverpanda.github.io'
-          directory: './result'
+          repository: 'clverpanda/bangumi-calendar-generator'
