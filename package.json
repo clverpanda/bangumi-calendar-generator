@@ -18,7 +18,7 @@
     "ics": "^3.7.2",
     "inquirer": "^8.2.5",
     "moment": "^2.29.3",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "prettier": "2.6.1"
