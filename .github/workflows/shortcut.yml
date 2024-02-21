@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2-beta
         with:
@@ -30,8 +32,4 @@ jobs:
           git config --local user.email "543833065@qq.com"
           git config --local user.name "clverpanda"
           git commit -m "Update Bangumi" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          repository: 'clverpanda/bangumi-calendar-generator'
+          git push
