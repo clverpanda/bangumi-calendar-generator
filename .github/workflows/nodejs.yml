@@ -38,8 +38,8 @@ jobs:
       - name: Commit files
         run: |
           cd result/
-          git add bagumi.ics
-          git add bagumi_list.json
+          git add bangumi.ics
+          git add bangumi_list.json
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Update Bangumi" -a
