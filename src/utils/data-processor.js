@@ -10,6 +10,8 @@ const BANGUMI_URL = DEFAULT.bangumiUrl; // 默认番剧 url
 const NO_ON_AIR_MSG = '无';
 const SITE_TYPE_ONAIR = 'onair';
 const SITE_TYPE_INFO = 'info';
+const NEW_BANGUMI_LABEL = '本季新番';
+const OLD_BANGUMI_LABEL = '上季旧番';
 
 
 const getInitialDateOfOldBangumi = (beginTime, timeNow) => {
@@ -58,11 +60,33 @@ const getBangumiSiteList = (bangumi, siteMeta) => {
 
 const getBangumiDescription = siteList => {
   if (siteList.length > 0) {
-    return siteList
-      .map(site => `${site.title}：${site.url}`)
-      .reduce((prev, next) => `${prev}\n${next}`);
+    return siteList.map(site => `${site.title}：${site.url}`);
   }
-  return NO_ON_AIR_MSG;
+  return [NO_ON_AIR_MSG];
+};
+
+const getBangumiClassification = bangumi =>
+  bangumi.isNew ? NEW_BANGUMI_LABEL : OLD_BANGUMI_LABEL;
+
+const getOnAirMoment = onAirTime => {
+  const [year, month, date, hour, minute] = onAirTime;
+  return moment({
+    year,
+    month: month - 1,
+    date,
+    hour,
+    minute,
+  });
+};
+
+const getEpisodeLocation = (bangumi, onAirTime, index) => {
+  if (bangumi.isNew) {
+    return `第${index + 1}集`;
+  }
+  const beginTime = moment(bangumi.begin);
+  const onAirMoment = getOnAirMoment(onAirTime);
+  const episode = onAirMoment.diff(beginTime, 'weeks') + 1;
+  return `第${episode}集`;
 };
 
 const getBangumiUrl = siteList => {
@@ -103,17 +127,17 @@ const getBangumiOnAirTimes = (bangumi, timeNow) => {
 const getEventsFromData = (bangumiData, siteMeta, timeNow) => {
   const events = [];
   for (const item of bangumiData) {
-    const titlePrefix = item.isNew ? '本季新番' : '上季旧番';
     const siteList = getBangumiSiteList(item, siteMeta);
     const onAirTimes = getBangumiOnAirTimes(item, timeNow);
-    for (const onAirTime of onAirTimes) {
+    for (const [index, onAirTime] of onAirTimes.entries()) {
       const newEvent = {
         start: onAirTime,
         duration: {
           minutes: EP_LENGTH,
         },
-        description: getBangumiDescription(siteList),
-        title: `${titlePrefix}：《${getBangumiName(item)}》`,
+        description: [`分类：${getBangumiClassification(item)}`, ...getBangumiDescription(siteList)].join('\n'),
+        location: getEpisodeLocation(item, onAirTime, index),
+        title: getBangumiName(item),
         url: getBangumiUrl(siteList),
       };
       events.push(newEvent);
