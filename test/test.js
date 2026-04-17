@@ -27,7 +27,7 @@ const bangumiData = [
     },
     type: 'tv',
     lang: 'ja',
-    begin: '2026-04-20T12:00:00.000Z',
+    begin: '2026-04-06T12:00:00.000Z',
     isNew: true,
     sites: [
       {
@@ -79,7 +79,7 @@ const createEvents = events =>
   assert.ok(firstNewEvent.description.startsWith('分类：本季新番'));
   assert.ok(firstNewEvent.description.includes('番组计划：https://bangumi.tv/subject/123'));
   assert.ok(firstNewEvent.description.includes('哔哩哔哩：https://www.bilibili.com/bangumi/media/md456/'));
-  assert.strictEqual(firstNewEvent.location, '第1集');
+  assert.strictEqual(firstNewEvent.location, '第3集');
 
   const firstOldEvent = oldBangumiEvents[0];
   assert.ok(firstOldEvent.description.startsWith('分类：上季旧番'));
@@ -92,7 +92,7 @@ const createEvents = events =>
   ]);
   assert.ok(icsContent.includes('SUMMARY:新番标题'));
   assert.ok(icsContent.includes('DESCRIPTION:分类：本季新番'));
-  assert.ok(icsContent.includes('LOCATION:第1集'));
+  assert.ok(icsContent.includes('LOCATION:第3集'));
   assert.ok(icsContent.includes('LOCATION:第7集'));
 
   console.log('All tests passed.');

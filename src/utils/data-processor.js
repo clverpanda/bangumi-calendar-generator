@@ -79,10 +79,7 @@ const getOnAirMoment = onAirTime => {
   });
 };
 
-const getEpisodeLocation = (bangumi, onAirTime, index) => {
-  if (bangumi.isNew) {
-    return `第${index + 1}集`;
-  }
+const getEpisodeLocation = (bangumi, onAirTime) => {
   const beginTime = moment(bangumi.begin);
   const onAirMoment = getOnAirMoment(onAirTime);
   const episode = onAirMoment.diff(beginTime, 'weeks') + 1;
@@ -129,14 +126,14 @@ const getEventsFromData = (bangumiData, siteMeta, timeNow) => {
   for (const item of bangumiData) {
     const siteList = getBangumiSiteList(item, siteMeta);
     const onAirTimes = getBangumiOnAirTimes(item, timeNow);
-    for (const [index, onAirTime] of onAirTimes.entries()) {
+    for (const onAirTime of onAirTimes) {
       const newEvent = {
         start: onAirTime,
         duration: {
           minutes: EP_LENGTH,
         },
         description: [`分类：${getBangumiClassification(item)}`, ...getBangumiDescription(siteList)].join('\n'),
-        location: getEpisodeLocation(item, onAirTime, index),
+        location: getEpisodeLocation(item, onAirTime),
         title: getBangumiName(item),
         url: getBangumiUrl(siteList),
       };
